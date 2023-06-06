@@ -1,0 +1,14 @@
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+<% if current_user %>
+  <p>Hello <%= current_user.email %>
+  <p>Hello <%= current_user.role %>
+  </p>
+  <%=link_to "Sign out", destroy_user_session_path, 'data-turbo-method': :delete %>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime esse rerum amet, cumque pariatur obcaecati dolor
+    vero quae sequi nulla quam ut eligendi praesentium distinctio, omnis voluptatibus? Repellat, quibusdam possimus?
+  </p>
+<% else %>
+  <%= link_to "sign in", new_user_session_path %>
+<% end %>
